@@ -18,7 +18,7 @@ public class TokenValidatorFilter {
 	private static ObjectMapper objectMapper = new ObjectMapper();
 	
     public static Filter validateUser = (Request req, Response resp) -> {
-     /*   String authorization = req.headers("Authorization");
+       String authorization = req.headers("Authorization");
         if(StringUtils.isEmpty(authorization)){
         	Spark.halt(400, "Auth Header required");
         }
@@ -26,7 +26,7 @@ public class TokenValidatorFilter {
         LoginResource resource = objectMapper.readValue(Base64.getDecoder().decode(auth),LoginResource.class);
         if(!tokenDao.tokenExists(resource.getId(), resource.getToken())){
             Spark.halt(401, "Invalid token");
-        }*/
+        }
         
     };
 }

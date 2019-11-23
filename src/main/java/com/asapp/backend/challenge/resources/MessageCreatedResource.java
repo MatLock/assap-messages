@@ -17,6 +17,7 @@ public class MessageCreatedResource extends CreateMessageResource {
 	public MessageCreatedResource(Message m, ContentResource resource) {
 		super(m.getSenderId(),m.getRecipentId(),resource);
 		this.id = m.getId();
+		this.timeStamp = m.getCreationDate();
 	}
 
 	public Integer getId() {

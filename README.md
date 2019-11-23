@@ -5,12 +5,14 @@ This is a java based boilerplate which runs an HTTP Server configured to answer 
 All endpoints are configured in src/main/java/com/asapp/backend/challenge/Application.java and if you go deeper to the
 Routes and Filters passed as second parameters, you will find a TODO comment where you are free to implement your solution.
 
-### How to run it
-```$xslt
-gradle run
+
+### Build Docker image
+```
+docker build -t assap/test .  
 ```
 
-
-##### Note
-You can remove/modify this file for documenting your solution.
+### How to run it
+```
+docker run -d -p 8080:8080 assap/test:latest 
+```
 
