@@ -7,6 +7,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
+import com.assap.challenge.model.Message;
 import com.assap.challenge.model.Token;
 import com.assap.challenge.model.User;
 
@@ -28,6 +29,7 @@ public class SessionFactoryBuilder {
       configuration.setProperties(settings);	         
       configuration.addAnnotatedClass(User.class);
       configuration.addAnnotatedClass(Token.class);
+      configuration.addAnnotatedClass(Message.class);
       ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
     			  .applySettings(configuration.getProperties()).build();
       sessionFactory = configuration.buildSessionFactory(serviceRegistry);

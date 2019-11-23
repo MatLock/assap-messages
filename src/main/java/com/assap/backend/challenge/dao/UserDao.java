@@ -42,6 +42,17 @@ public class UserDao extends Dao{
 	  }	 
 	}
 	
+	public boolean userExists(Integer id){
+		Session session = factory.openSession();
+		try{
+		  Query q = session.createQuery("FROM USER WHERE ID = :id");
+		  q.setParameter("id", id);
+		  return q.uniqueResult() != null; 
+		 }finally{
+		  session.close();
+		 }	 
+	}
+	
 	public User getUser(String username,String password){
 		Session session = factory.openSession();
 		try{
