@@ -16,3 +16,7 @@ docker build -t assap/test .
 docker run -d -p 8080:8080 assap/test:latest 
 ```
 
+### Health Check
+
+invoke hppt://localhost:8080/check to check if the docker is ready to accept request
+
